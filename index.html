@@ -1,114 +1,168 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MIA & QUANG Wedding Invitation</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thiệp Cưới</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;500&display=swap');
+
     body {
-      font-family: 'Georgia', serif;
-      margin: 0;
-      padding: 0;
-      background: #fffaf7;
-      color: #333;
-      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #F9E8DC;
     }
-    .container {
-      padding: 40px 20px;
-      max-width: 600px;
-      margin: auto;
-      border: 1px solid #aaa;
+
+    .handwriting {
+      font-family: 'Dancing Script', cursive;
     }
-    h1 {
-      font-size: 3em;
-      margin: 0.2em 0;
+
+    .card {
+      background: linear-gradient(135deg, rgba(255,255,255,0.97), rgba(255,255,255,0.9));
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      border-radius: 10px;
     }
-    .and {
-      font-size: 1.5em;
-      color: #aaa;
+
+    .heart-beat {
+      animation: heartbeat 1.5s ease-in-out infinite;
     }
-    .quote {
-      font-family: sans-serif;
-      margin: 40px 0;
-      font-size: 1.1em;
-    }
-    .date-time {
-      font-weight: bold;
-      font-size: 1.2em;
-    }
-    .venue {
-      display: flex;
-      justify-content: space-between;
-      border-top: 1px solid #aaa;
-      padding-top: 20px;
-      margin-top: 40px;
-      font-family: sans-serif;
-    }
-    .rsvp {
-      margin-top: 60px;
-    }
-    form {
-      margin-top: 30px;
-      font-family: sans-serif;
-    }
-    input, select, button {
-      display: block;
-      margin: 10px auto;
-      padding: 10px;
-      width: 80%;
-      max-width: 400px;
-      font-size: 1em;
-    }
-    button {
-      background-color: #eee;
-      border: 1px solid #ccc;
-      cursor: pointer;
+
+    @keyframes heartbeat {
+      0% { transform: scale(1); }
+      25% { transform: scale(1.1); }
+      50% { transform: scale(1); }
+      75% { transform: scale(1.1); }
+      100% { transform: scale(1); }
     }
   </style>
 </head>
-<body>
-  <div class="container">
-    <p>YOU ARE INVITED TO THE WEDDING OF</p>
-    <h1>MIA <span class="and">and</span> QUANG</h1>
-    <div class="quote">
-      We want to spend the most important day of our lives with the people who matter most to us.<br>
-      That’s why we invited you to our wedding.
-    </div>
-    <div class="date-time">
-      3.1.2025 <br> 04:00 PM
-    </div>
-    <div class="venue">
-      <div>
-        <strong>INTERCONTINENTAL</strong><br>
-        Bai Truong, Duong To, Phu Quoc,<br>
-        Kien Giang
-      </div>
-      <div style="font-style: italic;">
-        We look<br>
-        forward to an<br>
-        unforgettable<br>
-        day with you
+<body class="min-h-screen py-8 px-4">
+  <div class="max-w-md mx-auto">
+    <div class="text-center mb-8">
+      <h1 class="text-3xl md:text-4xl font-bold text-[#E07B39] mb-2 handwriting">Thiệp Mời</h1>
+      <div class="flex justify-center items-center">
+        <div class="w-12 h-px bg-[#F5A25D]"></div>
+        <i class="fas fa-heart mx-2 text-[#F5A25D] heart-beat"></i>
+        <div class="w-12 h-px bg-[#F5A25D]"></div>
       </div>
     </div>
 
-    <div class="rsvp">
-      <h2>R.S.V.P</h2>
-      <p>Kindly respond by 1.10.2024</p>
-      <!-- Google Form Embed -->
-      <form action="https://docs.google.com/forms/d/e/1FAIpQLSf_g9sU6a02XCKtyUjNZNCSlCFwvpHCoZlRrxFnuHaWTJcmPw/formResponse" method="POST" target="_blank">
-        <label>Your Name:</label>
-        <input type="text" name="entry.879781243" required />
+    <div class="card p-6 md:p-8 mb-8">
+      <div class="text-center mb-6">
+        <p class="text-gray-600 mb-2">Trân trọng kính mời bạn đến dự</p>
+        <p class="text-xl font-medium text-[#E07B39] mb-1">Lễ Thành Hôn của</p>
 
-        <label>Your Contact Number:</label>
-        <input type="text" name="entry.666006456" required />
+        <div class="my-4">
+          <p class="text-2xl md:text-3xl font-bold text-[#B45309] handwriting">Văn Đại</p>
+          <p class="text-sm text-gray-500 mb-2">(Chú rể)</p>
+          <p class="text-4xl text-[#F5A25D] my-1"><i class="fas fa-heart"></i></p>
+          <p class="text-2xl md:text-3xl font-bold text-[#B45309] handwriting">Hồng Hạnh</p>
+          <p class="text-sm text-gray-500">(Cô dâu)</p>
+        </div>
+      </div>
 
-        <label>Will you attend?</label><br>
-        <input type="radio" name="entry.1460154159" value="Yes" required> I WILL BE ATTENDING<br>
-        <input type="radio" name="entry.1460154159" value="No"> I WILL NOT BE ATTENDING<br><br>
+      <div class="text-center mb-6">
+        <div class="mb-4">
+          <p class="text-lg font-medium text-[#E07B39]">Thời gian:</p>
+          <p class="text-gray-700">10:30, Thứ Bảy</p>
+          <p class="text-gray-700">Ngày 03/05/2025 dương lịch (tức ngày 06/04 Ất Tỵ)</p>
+        </div>
 
-        <button type="submit">SEND</button>
+        <div>
+          <p class="text-lg font-medium text-[#E07B39]">Địa điểm:</p>
+          <p class="text-gray-700">Đội 1 - thôn Hưng Mỹ</p>
+          <p class="text-gray-700">xã Trực Mỹ - huyện Trực Ninh</p>
+          <p class="text-gray-700">tỉnh Nam Định</p>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button onclick="document.getElementById('rsvp-form').classList.toggle('hidden')"
+                class="px-6 py-2 bg-[#E07B39] hover:bg-[#B45309] text-white rounded-full font-medium transition">
+          Xác nhận tham dự <i class="fas fa-chevron-down ml-1"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="rsvp-form" class="card p-6 mb-8 hidden">
+      <h3 class="text-xl font-medium text-center text-[#E07B39] mb-4">Xác nhận tham dự</h3>
+
+      <form id="rsvpForm" class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Họ và tên</label>
+          <input type="text" id="name" class="w-full px-3 py-2 border rounded focus:ring-[#F5A25D] focus:border-[#F5A25D]" required>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Số điện thoại</label>
+          <input type="text" id="phone" class="w-full px-3 py-2 border rounded focus:ring-[#F5A25D] focus:border-[#F5A25D]" required>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">Bạn sẽ tham dự?</label>
+          <div class="space-y-2">
+            <label class="flex items-center">
+              <input type="radio" name="attendance" value="Vui vẻ nhận lời" checked class="text-[#E07B39] focus:ring-[#F5A25D]" required>
+              <span class="ml-2">Vui vẻ nhận lời</span>
+            </label>
+            <label class="flex items-center">
+              <input type="radio" name="attendance" value="Xin lỗi không thể tham dự" class="text-[#E07B39] focus:ring-[#F5A25D]" required>
+              <span class="ml-2">Xin lỗi không thể tham dự</span>
+            </label>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Lời nhắn (nếu có)</label>
+          <textarea id="message" rows="2" class="w-full px-3 py-2 border rounded focus:ring-[#F5A25D] focus:border-[#F5A25D]"></textarea>
+        </div>
+
+        <div class="pt-2">
+          <button type="submit" class="w-full py-2 bg-[#E07B39] hover:bg-[#B45309] text-white rounded font-medium">
+            Gửi phản hồi <i class="fas fa-paper-plane ml-1"></i>
+          </button>
+        </div>
       </form>
     </div>
+
+    <div class="text-center text-gray-500 text-sm">
+      <p>Mong được đón tiếp bạn trong ngày trọng đại của chúng tôi!</p>
+      <p class="mt-1 handwriting text-[#E07B39]">Văn Đại & Hồng Hạnh</p>
+    </div>
   </div>
+
+  <script>
+    document.getElementById('rsvpForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const data = {
+        name: document.getElementById('name').value,
+        phone: document.getElementById('phone').value,
+        attendance: document.querySelector('input[name="attendance"]:checked').value,
+        message: document.getElementById('message').value,
+      };
+
+      fetch('https://script.google.com/macros/s/AKfycbw9I2Y7onf9ar-onZYoN33Ss1BKludIHjVpgkJMHBnaw5mhlpW2Y_oh_htfMGP6WIRx/exec', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+      .then(res => res.json())
+      .then(res => {
+        if (res.result === 'success') {
+          alert('Cảm ơn bạn đã phản hồi! Chúng tôi rất mong được gặp bạn.');
+          document.getElementById('rsvpForm').reset();
+          document.getElementById('rsvp-form').classList.add('hidden');
+        }
+      })
+      .catch(error => {
+        alert('Có lỗi xảy ra, vui lòng thử lại.');
+        console.error(error);
+      });
+    });
+  </script>
 </body>
 </html>
