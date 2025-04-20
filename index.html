@@ -8,33 +8,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;500&display=swap');
-
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: #F9E8DC;
-    }
-
-    .handwriting {
-      font-family: 'Dancing Script', cursive;
-    }
-
-    .card {
-      background: linear-gradient(135deg, rgba(255,255,255,0.97), rgba(255,255,255,0.9));
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      border-radius: 10px;
-    }
-
-    .heart-beat {
-      animation: heartbeat 1.5s ease-in-out infinite;
-    }
-
-    @keyframes heartbeat {
-      0% { transform: scale(1); }
-      25% { transform: scale(1.1); }
-      50% { transform: scale(1); }
-      75% { transform: scale(1.1); }
-      100% { transform: scale(1); }
-    }
+    body { font-family: 'Montserrat', sans-serif; background-color: #F9E8DC; }
+    .handwriting { font-family: 'Dancing Script', cursive; }
+    .card { background: linear-gradient(135deg, rgba(255,255,255,0.97), rgba(255,255,255,0.9)); box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-radius: 10px; }
+    .heart-beat { animation: heartbeat 1.5s ease-in-out infinite; }
+    @keyframes heartbeat { 0% { transform: scale(1); } 25% { transform: scale(1.1); } 50% { transform: scale(1); } 75% { transform: scale(1.1); } 100% { transform: scale(1); } }
   </style>
 </head>
 <body class="min-h-screen py-8 px-4">
@@ -52,7 +30,6 @@
       <div class="text-center mb-6">
         <p class="text-gray-600 mb-2">Trân trọng kính mời bạn đến dự</p>
         <p class="text-xl font-medium text-[#E07B39] mb-1">Lễ Thành Hôn của</p>
-
         <div class="my-4">
           <p class="text-2xl md:text-3xl font-bold text-[#B45309] handwriting">Văn Đại</p>
           <p class="text-sm text-gray-500 mb-2">(Chú rể)</p>
@@ -68,7 +45,6 @@
           <p class="text-gray-700">10:30, Thứ Bảy</p>
           <p class="text-gray-700">Ngày 03/05/2025 dương lịch (tức ngày 06/04 Ất Tỵ)</p>
         </div>
-
         <div>
           <p class="text-lg font-medium text-[#E07B39]">Địa điểm:</p>
           <p class="text-gray-700">Đội 1 - thôn Hưng Mỹ</p>
@@ -87,18 +63,17 @@
 
     <div id="rsvp-form" class="card p-6 mb-8 hidden">
       <h3 class="text-xl font-medium text-center text-[#E07B39] mb-4">Xác nhận tham dự</h3>
-
-      <form id="rsvpForm" class="space-y-4">
+      <!-- Hidden iframe để nhận phản hồi mà không reload trang -->
+      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="onSubmitFinished()"></iframe>
+      <form action="https://script.google.com/macros/s/AKfycbziqPXPRCSNx3y37RSkR-Ey2iZJGnk7E9BPecPLgvczzc_G5nX_EbVB8-RwsQRzfg5W/exec" method="POST" target="hidden_iframe" id="rsvpForm" class="space-y-4">
         <div>
           <label class="block text-sm font-medium text-gray-700 mb-1">Họ và tên</label>
-          <input type="text" id="name" class="w-full px-3 py-2 border rounded focus:ring-[#F5A25D] focus:border-[#F5A25D]" required>
+          <input type="text" name="name" class="w-full px-3 py-2 border rounded focus:ring-[#F5A25D] focus:border-[#F5A25D]" required>
         </div>
-
         <div>
           <label class="block text-sm font-medium text-gray-700 mb-1">Số điện thoại</label>
-          <input type="text" id="phone" class="w-full px-3 py-2 border rounded focus:ring-[#F5A25D] focus:border-[#F5A25D]" required>
+          <input type="text" name="phone" class="w-full px-3 py-2 border rounded focus:ring-[#F5A25D] focus:border-[#F5A25D]" required>
         </div>
-
         <div>
           <label class="block text-sm font-medium text-gray-700 mb-2">Bạn sẽ tham dự?</label>
           <div class="space-y-2">
@@ -112,12 +87,10 @@
             </label>
           </div>
         </div>
-
         <div>
           <label class="block text-sm font-medium text-gray-700 mb-1">Lời nhắn (nếu có)</label>
-          <textarea id="message" rows="2" class="w-full px-3 py-2 border rounded focus:ring-[#F5A25D] focus:border-[#F5A25D]"></textarea>
+          <textarea name="message" rows="2" class="w-full px-3 py-2 border rounded focus:ring-[#F5A25D] focus:border-[#F5A25D]"></textarea>
         </div>
-
         <div class="pt-2">
           <button type="submit" class="w-full py-2 bg-[#E07B39] hover:bg-[#B45309] text-white rounded font-medium">
             Gửi phản hồi <i class="fas fa-paper-plane ml-1"></i>
@@ -131,37 +104,16 @@
       <p class="mt-1 handwriting text-[#E07B39]">Văn Đại & Hồng Hạnh</p>
     </div>
   </div>
-
   <script>
-    document.getElementById('rsvpForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      const data = {
-        name: document.getElementById('name').value,
-        phone: document.getElementById('phone').value,
-        attendance: document.querySelector('input[name="attendance"]:checked').value,
-        message: document.getElementById('message').value,
-      };
-
-      fetch('https://script.google.com/macros/s/AKfycbw9I2Y7onf9ar-onZYoN33Ss1BKludIHjVpgkJMHBnaw5mhlpW2Y_oh_htfMGP6WIRx/exec', {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-      .then(res => res.json())
-      .then(res => {
-        if (res.result === 'success') {
-          alert('Cảm ơn bạn đã phản hồi! Chúng tôi rất mong được gặp bạn.');
-          document.getElementById('rsvpForm').reset();
-          document.getElementById('rsvp-form').classList.add('hidden');
-        }
-      })
-      .catch(error => {
-        alert('Có lỗi xảy ra, vui lòng thử lại.');
-        console.error(error);
-      });
+    function onSubmitFinished() {
+      if(document.getElementById('rsvpForm')._submitted) {
+        alert('Cảm ơn bạn đã phản hồi! Chúng tôi rất mong được gặp bạn.');
+        document.getElementById('rsvpForm').reset();
+        document.getElementById('rsvp-form').classList.add('hidden');
+      }
+    }
+    document.getElementById('rsvpForm').addEventListener('submit', function() {
+      this._submitted = true;
     });
   </script>
 </body>
