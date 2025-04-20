@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MIA & QUANG Wedding Invitation</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      background: #fffaf7;
+      color: #333;
+      text-align: center;
+    }
+    .container {
+      padding: 40px 20px;
+      max-width: 600px;
+      margin: auto;
+      border: 1px solid #aaa;
+    }
+    h1 {
+      font-size: 3em;
+      margin: 0.2em 0;
+    }
+    .and {
+      font-size: 1.5em;
+      color: #aaa;
+    }
+    .quote {
+      font-family: sans-serif;
+      margin: 40px 0;
+      font-size: 1.1em;
+    }
+    .date-time {
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+    .venue {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid #aaa;
+      padding-top: 20px;
+      margin-top: 40px;
+      font-family: sans-serif;
+    }
+    .rsvp {
+      margin-top: 60px;
+    }
+    form {
+      margin-top: 30px;
+      font-family: sans-serif;
+    }
+    input, select, button {
+      display: block;
+      margin: 10px auto;
+      padding: 10px;
+      width: 80%;
+      max-width: 400px;
+      font-size: 1em;
+    }
+    button {
+      background-color: #eee;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <p>YOU ARE INVITED TO THE WEDDING OF</p>
+    <h1>MIA <span class="and">and</span> QUANG</h1>
+    <div class="quote">
+      We want to spend the most important day of our lives with the people who matter most to us.<br>
+      That’s why we invited you to our wedding.
+    </div>
+    <div class="date-time">
+      3.1.2025 <br> 04:00 PM
+    </div>
+    <div class="venue">
+      <div>
+        <strong>INTERCONTINENTAL</strong><br>
+        Bai Truong, Duong To, Phu Quoc,<br>
+        Kien Giang
+      </div>
+      <div style="font-style: italic;">
+        We look<br>
+        forward to an<br>
+        unforgettable<br>
+        day with you
+      </div>
+    </div>
+
+    <div class="rsvp">
+      <h2>R.S.V.P</h2>
+      <p>Kindly respond by 1.10.2024</p>
+      <!-- Google Form Embed -->
+      <form action="https://docs.google.com/forms/d/e/1FAIpQLSf_g9sU6a02XCKtyUjNZNCSlCFwvpHCoZlRrxFnuHaWTJcmPw/formResponse" method="POST" target="_blank">
+        <label>Your Name:</label>
+        <input type="text" name="entry.879781243" required />
+
+        <label>Your Contact Number:</label>
+        <input type="text" name="entry.666006456" required />
+
+        <label>Will you attend?</label><br>
+        <input type="radio" name="entry.1460154159" value="Yes" required> I WILL BE ATTENDING<br>
+        <input type="radio" name="entry.1460154159" value="No"> I WILL NOT BE ATTENDING<br><br>
+
+        <button type="submit">SEND</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
